@@ -16,23 +16,23 @@ self.__precacheManifest = [
     "url": "/Turn-based-strategy/static/js/runtime~main.9c267862.js"
   },
   {
-    "revision": "caa5d909cbe8ce4bbc06",
-    "url": "/Turn-based-strategy/static/js/main.74cde240.chunk.js"
+    "revision": "0b5bc3ad8f798fc67ff1",
+    "url": "/Turn-based-strategy/static/js/main.3e81b5da.chunk.js"
   },
   {
     "revision": "a0565a25a57de26b005c",
     "url": "/Turn-based-strategy/static/js/2.4676ba8f.chunk.js"
   },
   {
-    "revision": "caa5d909cbe8ce4bbc06",
-    "url": "/Turn-based-strategy/static/css/main.21930ff7.chunk.css"
+    "revision": "0b5bc3ad8f798fc67ff1",
+    "url": "/Turn-based-strategy/static/css/main.68d785a0.chunk.css"
   },
   {
     "revision": "a0565a25a57de26b005c",
     "url": "/Turn-based-strategy/static/css/2.11974964.chunk.css"
   },
   {
-    "revision": "5ad172fbda72f918ac3a2ec6b6616999",
+    "revision": "e5c894cd81184c1e128fee50884d441b",
     "url": "/Turn-based-strategy/index.html"
   }
 ];
