@@ -9,7 +9,7 @@ const BuildArea = (props) => {
         buildings.push(<img unselectable={"on"} draggable={"false"} key={building} className="buildArea__image" src={buildingImages[props.buildings[building].image]}
                             alt={props.buildings[building].image}/>)
     }
-    return (<div className="buildArea">
+    return (<div className="buildArea" draggable={"false"} unselectable={"on"}>
         {buildings}
     </div>)
 };

@@ -54,10 +54,10 @@ class App extends Component {
 
     finishDay = () => {
         date = date.add(1, 'day');
-        let food=this.state.food+this.state.foodPerDay;
-        if(food>=0) {
+        let food = this.state.food + this.state.foodPerDay;
+        if (food >= 0) {
             this.setState({date: date.format('DD/MM/YYYY'), food: this.state.food + this.state.foodPerDay});
-        }else{
+        } else {
             this.setState({date: date.format('DD/MM/YYYY'), food: 0});
         }
     };
@@ -68,7 +68,7 @@ class App extends Component {
             <Router>
                 <Route path="/Turn-based-strategy" exact render={
                     () => {
-                        document.title="Gra strategiczna";
+                        document.title = "Gra strategiczna";
                         return (<div>
                             <ResourcesPanel
                                 date={this.state.date}

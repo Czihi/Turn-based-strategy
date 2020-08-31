@@ -1,4 +1,4 @@
-.resources{
+.resources {
     background-color: #84603e;
     right: 0;
     top: 0;
@@ -6,7 +6,8 @@
     flex-wrap: wrap;
     flex-direction: row;
 }
-.resources__resource{
+
+.resources__resource {
     font-weight: 700;
     padding: 10px;
     color: #fcc352;
@@ -15,70 +16,92 @@
     border-top: solid 4px #4f271b;
     border-bottom: solid 4px #4f271b;
 }
-.resources__food{
+
+.resources__food {
     flex: 1 1;
     font-size: calc(1vw + 1vh);
 }
-.resources__population{
+
+.resources__population {
     flex: 1 1;
     font-size: calc(1vw + 1vh);
 }
-.resources__money{
+
+.resources__money {
     flex: 1 1;
     font-size: calc(1vw + 1vh);
 }
-.resources__date{
+
+.resources__date {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    flex:3 1;
+    flex: 3 1;
     font-size: calc(1.2vw + 1.2vh);
 }
-.resources__date--button{
+
+.resources__date--button {
     flex: 1 1;
     background-color: #4f271b;
     color: #fcc352;
     border: #4f271b;
 }
-.resources__date--value{
+
+.resources__date--value {
     flex: 1 1;
 }
-.main{
+
+.main {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
 }
-.buildingsList{
+
+.buildingsList {
     flex: 1 1;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     background-color: #84603e;
     min-height: 90vh;
-    width: calc(8vw + 8vh);
+    width: calc(6vw + 6vh);
 }
-.building{
+
+.building {
     margin-bottom: 5vh;
     text-align: center;
     color: #fcc352;
-    border-bottom: solid 2px #4f271b;
+    border-bottom: solid 4px #4f271b;
 }
-.building__image{
-    width: calc(8vw + 8vh);
+
+.building__image {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    width: calc(6vw + 6vh);
     height: auto;
     cursor: pointer;
 }
-.building__name{
+
+.building__name {
     font-size: calc(1.2vw + 1.2vh);
 }
-.board{
+
+.board {
     flex: 10 1;
 }
-.buildArea{
+
+.buildArea {
 
 }
-.buildArea__image{
+
+.buildArea__image {
     margin: 1%;
-    width: calc(8vw + 8vh);
+    width: calc(6vw + 6vh);
     height: auto;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
 }
