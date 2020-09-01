@@ -9,7 +9,7 @@ const MainPanel = (props) => {
             handleAddingFarm={props.handleAddingFarm}
         />
         <Board
-        buildings={props.buildings}
+            buildings={props.buildings}
         />
     </div>)
 };

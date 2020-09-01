@@ -67,12 +67,12 @@ class App extends Component {
             this.setState({date: date.format('DD/MM/YYYY'), food: 0});
         }
     };
-    showNoResources=(buildingName)=>{
+    showNoResources = (buildingName) => {
         document.getElementById("resources").style.display = "block";
-        document.getElementById("resources").innerText="Brak środków na wybudowanie:\n"+ buildingName;
+        document.getElementById("resources").innerText = "Brak środków na wybudowanie:\n" + buildingName;
         setTimeout(this.hideNoResources, 3000)
     };
-    hideNoResources=()=>{
+    hideNoResources = () => {
         document.getElementById("resources").style.display = "none";
     };
 
@@ -85,12 +85,12 @@ class App extends Component {
 
     showSummary = () => {
         document.getElementById("summary").style.display = "block";
-        let summaryText="Zakończono dzień!\nTempo przyrostu żywności: "+this.state.foodPerDay;
-        let starving=this.state.food+this.state.foodPerDay;
-        if(starving<0){
-            summaryText+="\nBrakuje żywności."
+        let summaryText = "Zakończono dzień!\nTempo przyrostu żywności: " + this.state.foodPerDay;
+        let starving = this.state.food + this.state.foodPerDay;
+        if (starving < 0) {
+            summaryText += "\nBrakuje żywności."
         }
-        document.getElementById("summary").innerText=summaryText
+        document.getElementById("summary").innerText = summaryText
         document.getElementById("finish").style.backgroundColor = "grey";
         document.getElementById("finish").setAttribute("disabled", "true")
         setTimeout(this.hideSummary, 3000)

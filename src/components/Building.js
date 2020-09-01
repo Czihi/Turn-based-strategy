@@ -3,15 +3,15 @@ import farm from "../images/Farm.png";
 import house from "../images/House.png";
 
 const buildingImages = {"farm": farm, "house": house};
-let panelOn=false;
+let panelOn = false;
 const Building = (props) => {
 
-    function createPanel(){
+    function createPanel() {
         let panel = document.createElement("div");
-        panel.setAttribute("id", "panel"+props.name);
+        panel.setAttribute("id", "panel" + props.name);
         panel.classList.add("building__panel");
-        panelOn=true;
-        return(panel)
+        panelOn = true;
+        return (panel)
     }
 
     function createYesButton(panel) {
@@ -36,17 +36,17 @@ const Building = (props) => {
 
     function deletePanel(panel) {
         panel.remove();
-        panelOn=false;
+        panelOn = false;
     };
 
     function showSidePanel() {
-        if(!panelOn) {
+        if (!panelOn) {
             let panel = createPanel();
             panel.append(createYesButton(panel));
             panel.append(createNoButton(panel));
             let building = document.getElementById(props.name);
             building.appendChild(panel);
-            panelOn=true;
+            panelOn = true;
         }
     }
 
