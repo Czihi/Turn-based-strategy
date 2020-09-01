@@ -4,6 +4,6 @@
 - zwiększa przyrost żywności o 10.
 - kosztuje 50.
 #### Dom
-- dziennie zmniejsza żywność o 5.
+- dziennie zmniejsza żywność o 3.
 - zwiększa populację o 20.
 - kosztuje 100.
