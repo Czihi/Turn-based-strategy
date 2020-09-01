@@ -1,8 +1,9 @@
 import React from "react";
 import Building from "./Building";
+import wood from "../images/Wood.png";
 
 const BuildingsListPanel = (props) => {
-    return (<div className="buildingsList">
+    return (<div className="buildingsList" style={{backgroundImage: `url(${wood})`}}>
         <Building
             name="Farma"
             image="farm"

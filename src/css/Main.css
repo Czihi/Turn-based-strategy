@@ -11,9 +11,9 @@
     font-weight: 700;
     padding: 10px;
     color: #fcc352;
-    border-left: solid 4px #4f271b;
-    border-top: solid 4px #4f271b;
-    border-bottom: solid 4px #4f271b;
+    border-left: solid 4px black;
+    border-top: solid 4px black;
+    border-bottom: solid 4px black;
 }
 
 .resources__food {
@@ -64,7 +64,7 @@
     background-color: #84603e;
     min-height: 90vh;
     width: calc(6vw + 6vh);
-    border: solid 4px #4f271b;
+    border: solid 4px black;
     border-top: 0;
 }
 
@@ -73,7 +73,7 @@
     padding-bottom: 2vh;
     text-align: center;
     color: #fcc352;
-    border-bottom: solid 4px #4f271b;
+    border-bottom: solid 4px black;
 }
 
 .building__image {
@@ -84,6 +84,11 @@
     width: calc(5vw + 5vh);
     height: auto;
     cursor: pointer;
+    transition: 0.5s;
+}
+.building__image:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
 }
 
 .building__name {
