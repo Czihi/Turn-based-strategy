@@ -38,7 +38,7 @@ class App extends Component {
                 foodPerDay: this.state.foodPerDay + 10
             })
         } else {
-            this.showNoResources("Farma")
+            this.showNoResources(building.name)
         }
     };
     handleAddingHouse = (building) => {
@@ -51,10 +51,10 @@ class App extends Component {
                 buildings: newBuildings,
                 money: this.state.money - building.price,
                 population: this.state.population + 20,
-                foodPerDay: this.state.foodPerDay - 5
+                foodPerDay: this.state.foodPerDay - 3
             })
         } else {
-            this.showNoResources("Dom");
+            this.showNoResources(building.name);
         }
     };
 
@@ -85,8 +85,12 @@ class App extends Component {
 
     showSummary = () => {
         document.getElementById("summary").style.display = "block";
-        document.getElementById("summary").innerText="Zakończono dzień!\n" +
-            "Tempo przyrostu żywności: "+this.state.foodPerDay
+        let summaryText="Zakończono dzień!\nTempo przyrostu żywności: "+this.state.foodPerDay;
+        let starving=this.state.food+this.state.foodPerDay;
+        if(starving<0){
+            summaryText+="\nBrakuje żywności."
+        }
+        document.getElementById("summary").innerText=summaryText
         document.getElementById("finish").style.backgroundColor = "grey";
         document.getElementById("finish").setAttribute("disabled", "true")
         setTimeout(this.hideSummary, 3000)

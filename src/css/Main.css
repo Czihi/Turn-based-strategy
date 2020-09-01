@@ -101,11 +101,13 @@
     background-color: #4f271b;
     color:gold;
     min-width: 4vw;
+    border: 4px solid black;
 }
 .building__button--no{
     background-color: #4f271b;
     color:gold;
     min-width: 4vw;
+    border: 4px solid black;
 }
 .board {
     flex: 10 1;
@@ -130,7 +132,7 @@
     position: absolute;
     margin-left: 35%;
     margin-right: 35%;
-    margin-top: 10%;
+    margin-top: 25vh;
     width: 30%;
     min-height: 10vh;
     font-size: calc(1vw + 1vh);
@@ -143,9 +145,9 @@
 .noResources{
     display: none;
     position: absolute;
+    margin-top: 10vh;
     margin-left: 35%;
     margin-right: 35%;
-    margin-top: 10%;
     width: 30%;
     min-height: 10vh;
     font-size: calc(1vw + 1vh);
