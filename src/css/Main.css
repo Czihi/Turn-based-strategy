@@ -11,8 +11,7 @@
     font-weight: 700;
     padding: 10px;
     color: #fcc352;
-    border-left: solid 2px #4f271b;
-    border-right: solid 2px #4f271b;
+    border-left: solid 4px #4f271b;
     border-top: solid 4px #4f271b;
     border-bottom: solid 4px #4f271b;
 }
@@ -65,10 +64,13 @@
     background-color: #84603e;
     min-height: 90vh;
     width: calc(6vw + 6vh);
+    border: solid 4px #4f271b;
+    border-top: 0;
 }
 
 .building {
-    margin-bottom: 5vh;
+    cursor: pointer;
+    padding-bottom: 2vh;
     text-align: center;
     color: #fcc352;
     border-bottom: solid 4px #4f271b;
@@ -79,7 +81,7 @@
     -webkit-user-select: none;
     user-select: none;
     -webkit-user-drag: none;
-    width: calc(6vw + 6vh);
+    width: calc(5vw + 5vh);
     height: auto;
     cursor: pointer;
 }
@@ -87,7 +89,24 @@
 .building__name {
     font-size: calc(1.2vw + 1.2vh);
 }
+.building__panel{
+    z-index: 1;
+    position: absolute;
+    width: calc(6vw + 6vh);
+    min-height: 6vh;
+    color: gold;
 
+}
+.building__button--yes{
+    background-color: #4f271b;
+    color:gold;
+    min-width: 4vw;
+}
+.building__button--no{
+    background-color: #4f271b;
+    color:gold;
+    min-width: 4vw;
+}
 .board {
     flex: 10 1;
 }
@@ -104,4 +123,34 @@
     -webkit-user-select: none;
     user-select: none;
     -webkit-user-drag: none;
+}
+
+.daySummary{
+    display: none;
+    position: absolute;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 10%;
+    width: 30%;
+    min-height: 10vh;
+    font-size: calc(1vw + 1vh);
+    border: solid 4px #4f271b;
+    background-color: #84603e;
+    color: gold;
+    text-align: center;
+}
+
+.noResources{
+    display: none;
+    position: absolute;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 10%;
+    width: 30%;
+    min-height: 10vh;
+    font-size: calc(1vw + 1vh);
+    border: solid 4px #4f271b;
+    background-color: #84603e;
+    color: gold;
+    text-align: center;
 }

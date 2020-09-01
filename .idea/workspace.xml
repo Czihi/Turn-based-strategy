@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88ddb1d2-e9c1-4d7b-b13c-0bce87180905" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Alerts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BuildArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BuildArea.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Building.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Building.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResourcesPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResourcesPanel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Main.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -92,7 +92,8 @@
       <updated>1598871757051</updated>
       <workItem from="1598871761755" duration="4277000" />
       <workItem from="1598876743781" duration="5242000" />
-      <workItem from="1598888245624" duration="17157000" />
+      <workItem from="1598888245624" duration="18336000" />
+      <workItem from="1598940816659" duration="13545000" />
     </task>
     <task id="LOCAL-00001" summary="Basic implementation">
       <created>1598902993576</created>
@@ -108,7 +109,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598903271270</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Buy panel changes">
+      <created>1598905894484</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1598905894484</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +139,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Basic implementation" />
     <MESSAGE value="Added README" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added README" />
+    <MESSAGE value="Buy panel changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Buy panel changes" />
   </component>
 </project>

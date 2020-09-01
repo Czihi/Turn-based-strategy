@@ -5,9 +5,10 @@ import {
     BrowserRouter as Router,
     Route
 } from 'react-router-dom';
-import ResourcesPanel from "./components/ResourcesPanel";
 import dayjs from "dayjs";
+import ResourcesPanel from "./components/ResourcesPanel";
 import MainPanel from "./components/MainPanel";
+import Alerts from "./components/Alerts";
 
 let date = dayjs();
 
@@ -20,39 +21,44 @@ class App extends Component {
             money: 1000,
             foodPerDay: 0,
             date: date.format('DD/MM/YYYY'),
-            buildings: []
+            buildings: [],
+            buildingId: 0
         };
     }
 
     handleAddingFarm = (building) => {
         if (this.state.money - building.price >= 0) {
             let newBuildings = [...this.state.buildings];
+            building['id'] = this.state.buildingId;
             newBuildings.push(building);
             this.setState({
+                buildingId: this.state.buildingId + 1,
                 buildings: newBuildings,
                 money: this.state.money - building.price,
                 foodPerDay: this.state.foodPerDay + 10
             })
         } else {
-            console.log("NOMONEY")
+            this.showNoResources("Farma")
         }
     };
     handleAddingHouse = (building) => {
         if (this.state.money - building.price >= 0) {
             let newBuildings = [...this.state.buildings];
+            building['id'] = this.state.buildingId;
             newBuildings.push(building);
             this.setState({
+                buildingId: this.state.buildingId + 1,
                 buildings: newBuildings,
                 money: this.state.money - building.price,
                 population: this.state.population + 20,
                 foodPerDay: this.state.foodPerDay - 5
             })
         } else {
-            console.log("NOMONEY")
+            this.showNoResources("Dom");
         }
     };
 
-    finishDay = () => {
+    calculateResources = () => {
         date = date.add(1, 'day');
         let food = this.state.food + this.state.foodPerDay;
         if (food >= 0) {
@@ -60,6 +66,35 @@ class App extends Component {
         } else {
             this.setState({date: date.format('DD/MM/YYYY'), food: 0});
         }
+    };
+    showNoResources=(buildingName)=>{
+        document.getElementById("resources").style.display = "block";
+        document.getElementById("resources").innerText="Brak środków na wybudowanie:\n"+ buildingName;
+        setTimeout(this.hideNoResources, 3000)
+    };
+    hideNoResources=()=>{
+        document.getElementById("resources").style.display = "none";
+    };
+
+
+    hideSummary = () => {
+        document.getElementById("summary").style.display = "none";
+        document.getElementById("finish").style.backgroundColor = "#4f271b"
+        document.getElementById("finish").removeAttribute("disabled")
+    };
+
+    showSummary = () => {
+        document.getElementById("summary").style.display = "block";
+        document.getElementById("summary").innerText="Zakończono dzień!\n" +
+            "Tempo przyrostu żywności: "+this.state.foodPerDay
+        document.getElementById("finish").style.backgroundColor = "grey";
+        document.getElementById("finish").setAttribute("disabled", "true")
+        setTimeout(this.hideSummary, 3000)
+    };
+
+    finishDay = () => {
+        this.calculateResources();
+        this.showSummary();
     };
 
     render() {
@@ -70,6 +105,7 @@ class App extends Component {
                     () => {
                         document.title = "Gra strategiczna";
                         return (<div>
+                            <Alerts/>
                             <ResourcesPanel
                                 date={this.state.date}
                                 food={this.state.food}
