@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88ddb1d2-e9c1-4d7b-b13c-0bce87180905" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="88ddb1d2-e9c1-4d7b-b13c-0bce87180905" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +86,7 @@
       <workItem from="1598871761755" duration="4277000" />
       <workItem from="1598876743781" duration="5242000" />
       <workItem from="1598888245624" duration="18336000" />
-      <workItem from="1598940816659" duration="17168000" />
+      <workItem from="1598940816659" duration="17582000" />
     </task>
     <task id="LOCAL-00001" summary="Basic implementation">
       <created>1598902993576</created>
@@ -139,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598958372440</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Update README">
+      <created>1598958651289</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1598958651289</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +171,7 @@
     <MESSAGE value="Added finish day and no resources alerts" />
     <MESSAGE value="Added information about no food" />
     <MESSAGE value="Small css fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small css fixes" />
+    <MESSAGE value="Update README" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README" />
   </component>
 </project>
