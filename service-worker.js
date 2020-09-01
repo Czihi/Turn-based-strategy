@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Turn-based-strategy/precache-manifest.ac097061abeff20884fbe6d8156514f7.js"
+  "/Turn-based-strategy/precache-manifest.23f256ad508e796863c806e0d6e85e64.js"
 );
 
 workbox.clientsClaim();
