@@ -43,7 +43,7 @@
     flex: 1 1;
     background-color: #4f271b;
     color: #fcc352;
-    border: #4f271b;
+    border: solid 4px black;
 }
 
 .resources__date--value {
@@ -146,7 +146,7 @@
     width: 30%;
     min-height: 10vh;
     font-size: calc(1vw + 1vh);
-    border: solid 4px #4f271b;
+    border: solid 4px black;
     background-color: #84603e;
     color: gold;
     text-align: center;
@@ -161,7 +161,7 @@
     width: 30%;
     min-height: 10vh;
     font-size: calc(1vw + 1vh);
-    border: solid 4px #4f271b;
+    border: solid 4px black;
     background-color: #84603e;
     color: gold;
     text-align: center;
