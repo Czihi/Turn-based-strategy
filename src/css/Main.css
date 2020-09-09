@@ -309,6 +309,7 @@
     font-size: calc(1vw + 1vh);
     padding: 10px;
 }
+
 .barracks__panel--buildWaiting {
     padding: 10px;
 }
@@ -544,18 +545,18 @@
 }
 
 .farm__panel {
-     left: -75%;
-     top: -75%;
-     display: none;
-     z-index: 1;
-     padding: 2px;
-     color: #fcc352;
-     background-color: #84603e;
-     border: solid 4px black;
-     position: absolute;
-     min-width: calc(15vw + 15vh);
-     font-size: calc(0.8vw + 0.8vh);
- }
+    left: -75%;
+    top: -75%;
+    display: none;
+    z-index: 1;
+    padding: 2px;
+    color: #fcc352;
+    background-color: #84603e;
+    border: solid 4px black;
+    position: absolute;
+    min-width: calc(15vw + 15vh);
+    font-size: calc(0.8vw + 0.8vh);
+}
 
 .farm__panel--name {
     padding: 10px;
@@ -609,6 +610,73 @@
     font-size: calc(0.5vw + 0.5vh);
 }
 
-.recruitment{
+.recruitment {
     display: none;
+}
+
+.battle {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height:120vh;
+}
+
+.battle__info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.battle__label {
+    padding: calc(1vw + 1vh);
+    font-size: calc(2vw + 2vh);
+    color: #fcc352;
+    text-align: center;
+    border: 4px solid black;
+}
+
+.battle__info--ally {
+    border-left: 4px solid black;
+    border-right: 4px solid black;
+    flex: 1 1;
+}
+
+.battle__info--enemy {
+    border-left: 4px solid black;
+    border-right: 4px solid black;
+    flex: 1 1;
+}
+.battle__info--middle{
+    flex: 2 1;
+    align-self: center;
+    text-align: center;
+}
+.battle__info--enemyLabel {
+    padding: calc(1vw + 1vh);
+    font-size: calc(1.5vw + 1.5vh);
+    color: #fcc352;
+    text-align: center;
+    border-bottom: 4px solid black;
+}
+.battle__info--allyLabel {
+    padding: calc(1vw + 1vh);
+    font-size: calc(1.5vw + 1.5vh);
+    color: #fcc352;
+    text-align: center;
+    border-bottom: 4px solid black;
+}
+.battle__info--button{
+    background-color: #4f271b;
+    color: #fcc352;
+    font-size: calc(1.5vw + 1.5vh);
+    border: 4px solid black;
+    min-height: calc(4vw + 4vh);
+    min-width: 50%;
+}
+.battle__info--result{
+    font-size: calc(2vw + 2vh);
+    color: #fcc352;
+    text-align: center;
 }

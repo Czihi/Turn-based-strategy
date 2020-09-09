@@ -10,6 +10,7 @@ import ResourcesPanel from "./components/ResourcesPanel/ResourcesPanel";
 import MainPanel from "./components/MainPanel/MainPanel";
 import Alerts from "./components/Alerts/Alerts";
 import BottomPanel from "./components/BottomPanel/BottomPanel";
+import Battle from "./components/Battle/Battle";
 
 let date = dayjs();
 
@@ -18,6 +19,7 @@ class App extends Component {
         super(props);
         this.state = {
             date: date.format('DD/MM/YYYY'),
+            day: 1,
             armyAmount: 0,
             food: 0,
             population: 0,
@@ -33,18 +35,24 @@ class App extends Component {
             numberOfHouses: 0,
             numberOfStables: 0,
             army: {"archer": 0, "swordsman": 0, "archerCavalry": 0, "cavalry": 0},
-            unitCost: {
-                "archer": {"money": 20, "population": 1},
-                "swordsman": {"money": 15, "population": 1},
-                "archerCavalry": {"money": 100, "population": 2},
-                "cavalry": {"money": 120, "population": 2}
+            unitInfo: {
+                "archer": {"money": 20, "population": 1, "attack": 3, "defense": 5},
+                "swordsman": {"money": 15, "population": 1, "attack": 5, "defense": 2},
+                "archerCavalry": {"money": 100, "population": 2, "attack": 5, "defense": 15},
+                "cavalry": {"money": 120, "population": 2, "attack": 20, "defense": 5}
             },
             polishNames: {
                 "archer": "Łucznik",
                 "swordsman": "Miecznik",
                 "archerCavalry": "Kawaleria łucznicza",
                 "cavalry": "Kawaleria"
-            }
+            },
+            fights: [
+                {"day": 5, "archer": 10, "swordsman": 10, "archerCavalry": 0, "cavalry": 0},
+                {"day": 10, "archer": 100, "swordsman": 100, "archerCavalry": 20, "cavalry": 10},
+                {"day": 15, "archer": 300, "swordsman": 500, "archerCavalry": 100, "cavalry": 200},
+                {"day": 0, "archer": 300, "swordsman": 500, "archerCavalry": 100, "cavalry": 200},
+                ]
         };
         this.farmFoodIncome = 10;
         this.homePopulation = 20;
@@ -143,8 +151,8 @@ class App extends Component {
     //recruitmentHandlers
 
     handleRecruiting = (unit, amount) => {
-        const populationRequired = this.state.unitCost[unit]["population"] * amount;
-        const moneyRequired = this.state.unitCost[unit]["money"] * amount;
+        const populationRequired = this.state.unitInfo[unit]["population"] * amount;
+        const moneyRequired = this.state.unitInfo[unit]["money"] * amount;
         if (amount > 0) {
             if (populationRequired <= this.state.population) {
                 if (moneyRequired <= this.state.money) {
@@ -165,24 +173,126 @@ class App extends Component {
         }
     };
 
+    //startDayFights
+
+    startDay = () => {
+        if (this.state.fights[0]['day'] === this.state.day) {
+            document.getElementById("battlefield").style.display = "block";
+        }
+    };
+
+    startFight = () => {
+        const playerArcher = this.state.army['archer'];
+        const playerSwordsman = this.state.army['swordsman'];
+        const playerArcherCavalry = this.state.army['archerCavalry'];
+        const playerCavalry = this.state.army['cavalry'];
+
+        const enemyArcher = this.state.fights[0]['archer'];
+        const enemySwordsman = this.state.fights[0]['swordsman'];
+        const enemyArcherCavalry = this.state.fights[0]['archerCavalry'];
+        const enemyCavalry = this.state.fights[0]['cavalry'];
+
+        const archerAtk = this.state.unitInfo['archer']['attack'];
+        const archerDef = this.state.unitInfo['archer']['defense'];
+        const swordsmanAtk = this.state.unitInfo['swordsman']['attack'];
+        const swordsmanDef = this.state.unitInfo['swordsman']['defense'];
+        const archerCavalryAtk = this.state.unitInfo['archerCavalry']['attack'];
+        const archerCavalryDef = this.state.unitInfo['archerCavalry']['defense'];
+        const cavalryAtk = this.state.unitInfo['cavalry']['attack'];
+        const cavalryDef = this.state.unitInfo['cavalry']['defense'];
+
+        let playerAtk = playerArcher * archerAtk + playerSwordsman * swordsmanAtk + playerArcherCavalry * archerCavalryAtk + playerCavalry * cavalryAtk;
+        let playerDef = playerArcher * archerDef + playerSwordsman * swordsmanDef + playerArcherCavalry * archerCavalryDef + playerCavalry * cavalryDef;
+        let enemyAtk = enemyArcher * archerAtk + enemySwordsman * swordsmanAtk + enemyArcherCavalry * archerCavalryAtk + enemyCavalry * cavalryAtk;
+        let enemyDef = enemyArcher * archerDef + enemySwordsman * swordsmanDef + enemyArcherCavalry * archerCavalryDef + enemyCavalry * cavalryDef;
+        this.calculateFight(playerAtk, playerDef, enemyAtk, enemyDef)
+    };
+
+    calculateFight = (playerAtk, playerDef, enemyAtk, enemyDef) => {
+        let playerDefCopy = playerDef;
+        let playerTurn = false;
+        let playerWon = true;
+        while (true) {
+            if (playerTurn) {
+                if (playerDef > 0) {
+                    enemyDef -= playerAtk;
+                } else {
+                    playerWon = false;
+                    break
+                }
+            } else {
+                if (enemyDef > 0) {
+                    playerDef -= enemyAtk;
+                } else {
+                    playerWon = true;
+                    break
+                }
+            }
+            playerTurn = !playerTurn;
+        }
+        if (playerWon) {
+            document.getElementById("result").innerHTML = "Wygrałeś!"
+        } else {
+            document.getElementById("result").innerHTML = "Przegrałeś!"
+        }
+        if (playerDef < 0) {
+            playerDef = 0
+        }
+        let lossPercent;
+        if (playerDefCopy !== 0) {
+            lossPercent = playerDef / playerDefCopy;
+        } else {
+            lossPercent = 0
+        }
+        this.calculateLosses(lossPercent)
+    };
+
+    calculateLosses = (lossPercent) => {
+        let newArmy = {
+            "archer": Math.ceil(this.state.army['archer'] * lossPercent),
+            "swordsman": Math.ceil(this.state.army['swordsman'] * lossPercent),
+            "archerCavalry": Math.ceil(this.state.army['archerCavalry'] * lossPercent),
+            "cavalry": Math.ceil(this.state.army['cavalry'] * lossPercent)
+        };
+        let difference = (this.state.army['archer'] - newArmy['archer']) * this.state.unitInfo['archer']['population'] +
+            (this.state.army['swordsman'] - newArmy['swordsman']) * this.state.unitInfo['swordsman']['population'] +
+            (this.state.army['archerCavalry'] - newArmy['archerCavalry']) * this.state.unitInfo['archerCavalry']['population'] +
+            (this.state.army['cavalry'] - newArmy['cavalry']) * this.state.unitInfo['cavalry']['population']
+        this.setState({
+            army: newArmy,
+            population: this.state.population + difference,
+            armyAmount: this.state.armyAmount - difference
+        });
+        setTimeout(this.cleanUpBattle, 3000)
+    };
+
+    cleanUpBattle = () => {
+        document.getElementById("battlefield").style.display = "none";
+        document.getElementById("result").innerText="";
+        let newFights = this.state.fights;
+        newFights.shift();
+        this.setState({fights: newFights})
+    };
+
     //finishDayCalculations
 
     finishDay = () => {
         this.calculateDaysToBuild();
         this.calculateResources();
         this.showSummary();
+        setTimeout(this.startDay, 3000)
     };
 
     calculateDaysToBuild = () => {
-        let newBuildings=[...this.state.buildings];
-        for (const building in this.state.buildings){
-            if(this.state.buildings[building].daysToBuild>1){
-                newBuildings[building].daysToBuild-=1;
-            }else{
-                document.getElementById("buildWaiting" +this.state.buildings[building].buildingId).style.display="none";
-                document.getElementById("buildWaitingIcon" +this.state.buildings[building].buildingId).style.display="none";
-                if(document.getElementById("recruitment"+this.state.buildings[building].buildingId)!=null){
-                    document.getElementById("recruitment"+this.state.buildings[building].buildingId).style.display="block"
+        let newBuildings = [...this.state.buildings];
+        for (const building in this.state.buildings) {
+            if (this.state.buildings[building].daysToBuild > 1) {
+                newBuildings[building].daysToBuild -= 1;
+            } else {
+                document.getElementById("buildWaiting" + this.state.buildings[building].buildingId).style.display = "none";
+                document.getElementById("buildWaitingIcon" + this.state.buildings[building].buildingId).style.display = "none";
+                if (document.getElementById("recruitment" + this.state.buildings[building].buildingId) != null) {
+                    document.getElementById("recruitment" + this.state.buildings[building].buildingId).style.display = "block"
                 }
             }
         }
@@ -195,7 +305,7 @@ class App extends Component {
     };
     calculateDate = () => {
         date = date.add(1, 'day');
-        this.setState({date: date.format('DD/MM/YYYY')})
+        this.setState({date: date.format('DD/MM/YYYY'), day: this.state.day + 1})
     };
     calculateFood = () => {
         let food = this.state.food + this.state.foodDayIncome;
@@ -267,6 +377,7 @@ class App extends Component {
                                 population={this.state.population}
                                 money={this.state.money}
                                 armyAmount={this.state.armyAmount}
+                                day={this.state.day}
                                 finishDay={this.finishDay}
                             />
                             <MainPanel
@@ -280,6 +391,11 @@ class App extends Component {
                                 handleRecruiting={this.handleRecruiting}
                             />
                             <BottomPanel/>
+                            <Battle
+                                army={this.state.army}
+                                fights={this.state.fights[0]}
+                                startFight={this.startFight}
+                            />
                         </div>)
                     }
                 }/>

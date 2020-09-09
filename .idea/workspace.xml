@@ -2,38 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88ddb1d2-e9c1-4d7b-b13c-0bce87180905" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/BottomPanel/BottomPanel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MainPanel/ArmyPanel/ArmyPanel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MainPanel/ArmyPanel/ArmyUnits/Archer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MainPanel/ArmyPanel/ArmyUnits/Cavalry.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MainPanel/ArmyPanel/ArmyUnits/CavalryArcher.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MainPanel/ArmyPanel/ArmyUnits/Swordsman.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MainPanel/Board/BuildArea/BuildArea.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MainPanel/Board/BuildArea/Buildings/Bank.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MainPanel/Board/BuildArea/Buildings/Barracks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MainPanel/Board/BuildArea/Buildings/Farm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MainPanel/Board/BuildArea/Buildings/House.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MainPanel/Board/BuildArea/Buildings/Stable.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Archer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Bank.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Barracks.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Cavalry.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/CavalryArcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Stable.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Swordsman.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/Waiting.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Battle/Battle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Alerts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Alerts/Alerts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Board.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainPanel/Board/Board.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BuildArea.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Building.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainPanel/BuildingsListPanel/Building/Building.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BuildingsListPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainPanel/BuildingsListPanel/BuildingsListPanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MainPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainPanel/MainPanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ResourcesPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResourcesPanel/ResourcesPanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResourcesPanel/ResourcesPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ResourcesPanel/ResourcesPanel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/Main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Farm.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/Farm.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/House.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/House.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -131,6 +104,8 @@
       <workItem from="1599113452451" duration="20153000" />
       <workItem from="1599201855128" duration="8759000" />
       <workItem from="1599472251656" duration="1367000" />
+      <workItem from="1599631995782" duration="5739000" />
+      <workItem from="1599645242629" duration="6596000" />
     </task>
     <task id="LOCAL-00001" summary="Basic implementation">
       <created>1598902993576</created>
@@ -202,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598959367055</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Major update, added more buildings, units and recruitment">
+      <created>1599632160684</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1599632160684</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +212,7 @@
     <MESSAGE value="Added information about no food" />
     <MESSAGE value="Small css fixes" />
     <MESSAGE value="Update README" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README" />
+    <MESSAGE value="Major update, added more buildings, units and recruitment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Major update, added more buildings, units and recruitment" />
   </component>
 </project>
