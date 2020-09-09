@@ -1,5 +1,5 @@
 import React from "react";
-import wood from "../images/Wood.png";
+import wood from "../../images/Wood.png";
 const ResourcesPanel=(props)=>{
     return (
         <div className="resources" style={{backgroundImage: `url(${wood})`}}>
@@ -10,6 +10,7 @@ const ResourcesPanel=(props)=>{
             <div className="resources__resource resources__food">Żywność: {props.food}</div>
             <div className="resources__resource resources__population">Populacja: {props.population}</div>
             <div className="resources__resource resources__money">Pieniądze: {props.money}</div>
+            <div className="resources__resource resources__army">Armia: {props.armyAmount}</div>
         </div>
     );
 };
