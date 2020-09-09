@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/Turn-based-strategy/static/media/Bank.59b05d19.png"
   },
   {
-    "revision": "331a8da699dc52b03dee",
-    "url": "/Turn-based-strategy/static/css/main.f33db6b4.chunk.css"
+    "revision": "9db75166ed852bb5d5e3",
+    "url": "/Turn-based-strategy/static/css/main.96ae33ab.chunk.css"
   },
   {
     "revision": "aa0b7b81c15731df8739",
@@ -16,8 +16,8 @@ self.__precacheManifest = [
     "url": "/Turn-based-strategy/static/media/Cavalry.41ddb896.png"
   },
   {
-    "revision": "0c972f062dbfdd7d28f1",
-    "url": "/Turn-based-strategy/static/js/2.a9970c8a.chunk.js"
+    "revision": "7b399a624c351d531c79",
+    "url": "/Turn-based-strategy/static/js/2.60156c0c.chunk.js"
   },
   {
     "revision": "a23ce481993d9c10b74e1cfc6a4de001",
@@ -36,8 +36,8 @@ self.__precacheManifest = [
     "url": "/Turn-based-strategy/static/media/House.8ba6d2b7.png"
   },
   {
-    "revision": "331a8da699dc52b03dee",
-    "url": "/Turn-based-strategy/static/js/main.f4e53f7f.chunk.js"
+    "revision": "9db75166ed852bb5d5e3",
+    "url": "/Turn-based-strategy/static/js/main.2209f459.chunk.js"
   },
   {
     "revision": "261953ea8c7acff6d2b8545f1e7e8166",
@@ -64,11 +64,11 @@ self.__precacheManifest = [
     "url": "/Turn-based-strategy/static/media/CavalryArcher.5e948831.png"
   },
   {
-    "revision": "0c972f062dbfdd7d28f1",
+    "revision": "7b399a624c351d531c79",
     "url": "/Turn-based-strategy/static/css/2.11974964.chunk.css"
   },
   {
-    "revision": "6aa37312ff2bbe8458463d7b7b58ded1",
+    "revision": "b16f7c37eb8d9956475479cdea00d1cc",
     "url": "/Turn-based-strategy/index.html"
   }
 ];
